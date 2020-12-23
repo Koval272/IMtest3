@@ -1,0 +1,82 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Учет ноутбуков на кафедре АСУ</title>
+</head>
+<body>
+    <form method="POST" action="create/"> {% csrf_token %}
+    <h1>Внесенние данных</h1>
+        <div id="container">
+            <p><label>Выберите аудиторию</label>
+            <select name="au">
+                <option value="401"> 401</option>
+                <option value="402">402</option>
+                <option value="403">403</option>
+                <option value="404">404</option>
+                <option value="405">405</option>
+                <option value="435"> 435</option>
+                <option value="436">436</option>
+                <option value="437">437</option>
+                <option value="438">438</option>
+                <option value="439">439</option>
+                </select><label>Выберите ответветственное лицо </label>
+            <select name="person">
+                <option value="А.И. Исакова">А.И. Исакова</option>
+                <option value="С.М. Алферов">С.М. Алферов</option>
+                <option value="А.А. Шелестов">А.А. Шелестов</option>
+                 <option value="А.К. Лукьянов">А.К. Лукьянов</option>
+                <option value="А.Я Суханов">А.Я Суханов</option>
+                <option value="Е.Б. Грибанова">Е.Б. Грибанова</option>
+                <option value="С.Л. Миньков">С.Л. Миньков</option>
+                </select></p>
+                <p><label>Укажите бренд </label><input type="text" required name="brand"/>
+                <label>Укажите модель </label><input type="text" required name="model" /></p>
+                <p><label>Выберите тип ноутбука </label>
+            <select name="type">
+                <option value="Ноутбук">Ноутбук</option>
+                <option value="Нетбук">Нетбук</option>
+                <option value="Ультрабук">Ультрабук</option>
+                </select><label>Укажите процессор </label><input type="text" required name="cpu"/></p>
+                <p><label>Выберите тип видеокарты </label>
+            <select name="gpu">
+                <option value="встроенная">встроенная</option>
+                <option value="дискретная">дискретная</option>
+                <option value="встроенная и дискретная">встроенная и дискретная</option>
+                </select><label>Укажите количество оперативной памяти, ГБ </label><input type="text" required min="1" name="ram"/></p>
+                <p>
+                <label for="date">Дата приобритения </label>
+                <input type="date" id="date" name="dateBuy"/>
+                <label for="date">Дата ввода в эксплуатацию </label>
+                <input type="date" id="date" name="dateUse"/>
+                <p><label>Выберите состояние </label>
+            <select name="state">
+                <option value="Исправен">Исправен</option>
+                <option value="Не исправен">Не справен</option>
+                <option value="В ремонте">В ремонте</option>
+                </select><label>Укажите срок амортизации </label><input type="text" required min="1" name="term"/></p>
+                <input type="submit" value="Внести" >
+            </div>
+    </form>
+{% if tech.count > 0 %}
+    <h2>Список ноутбуков</h2>
+    <table class="table_dark">
+        <tr><th > Код </th><th> Аудитория </th><th> Бренд </th><th> Модель </th><th> Тип </th><th> Процессор </th><th> Тип видеокарты </th><th> Объем оперативной памяти, ГБ </th><th> Состояние </th>
+        <th> Приобретен </th><th>Введен в эксплуатацию</th><th>Ответственное лицо</th><th>Срок амортизации</th></tr>
+        {% for tech in tech %}
+            <tr><td>{{ tech.id }}</td>
+            <td>{{ tech.audience}}</td><td>{{ tech.brand}}</td><td>{{ tech.model}}</td><td>{{ tech.tp}}</td><td>{{ tech.cpu}}</td>
+            <td>{{ tech.gpu}}</td><td>{{ tech.ram}}</td><td>{{ tech.state}}</td><td>{{ tech.date}}</td><td>{{ tech.use}}</td>
+            <td>{{ tech.person}}</td><td>{{ tech.term}}</td><td><a href="edit/{{tech.id}}">Изменить</a></td>
+                    </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+<div id="footer">
+   &copy; Ковалев В.С., Дубинина Е.А. 2020
+  </div>
+
+</body>
+</html>
