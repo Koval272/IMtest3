@@ -64,6 +64,7 @@
     <Content Include="Notebook\migrations\__pycache__\__init__.cpython-37.pyc" />
     <Content Include="Notebook\static\style.css" />
     <Content Include="Notebook\templates\edit.html" />
+    <Content Include="Notebook\templates\repairs.html" />
     <Content Include="Notebook\templates\main.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />

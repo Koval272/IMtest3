@@ -1,49 +1,99 @@
 body {
-    font-family: Geneva, Arial, Helvetica, sans-serif;
-    text-align: center;
+    font-family: Noto Sans, sans-serif;
     background: #ffffff;
 }
-#footer {
-    position: fixed; /* Фиксированное положение */
-    left: 0; bottom: 0; /* Левый нижний угол */
-    padding: 10px; /* Поля вокруг текста */
-    background: #39b54a; /* Цвет фона */
-    color: #fff; /* Цвет текста */
-    width: 100%; /* Ширина слоя */
-   }
-.table_dark {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 15px;
-    width: 640px;
-    margin: auto;
-    text-align: left;
-    border-collapse: collapse;
-    background: #252F48;
+
+.container {
+    width: 65%;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 90px;
 }
 
-    .table_dark th {
-        color: #EDB749;
-        border-bottom: 1px solid #37B5A5;
-        text-align: center;
-        padding: 12px 17px;
-    }
+h1 {
+    padding: 15px;
+    margin: 0;
+}
 
-    .table_dark td {
-        color: #CAD4D6;
-        border-bottom: 1px solid #37B5A5;
-        border-right: 1px solid #37B5A5;
-        text-align: center;
-        padding: 7px 17px;
-    }
+.container0 {
+    width: 35%;
+    padding: 10px;
+    position: absolute;
+    left: 40px;
+    top: 90px;
+}
 
-    .table_dark tr:last-child td {
-        border-bottom: none;
-    }
+.test {
+    height: 30px;
+    width: 200px;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
 
-    .table_dark td:last-child {
-        border-right: none;
-    }
+.footer {
+    position: fixed; /* Фиксированное положение */
+    left: 0;
+    bottom: 0; /* Левый нижний угол */
+    padding: 0px; /* Поля вокруг текста */
+    background: #f5f5f5; /* Цвет фона */
+    color: #a9a9a9; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+    text-align: center;
+    font-size: 15px;
+}
 
-    .table_dark tr:hover td {
-        text-decoration: underline;
-    }
+.toper {
+    position: fixed; /* Фиксированное положение */
+    left: 0;
+    top: 0; /* Левый нижний угол */
+    padding: 0px; /* Поля вокруг текста */
+    background: #f5f5f5; /* Цвет фона */
+    color: #000000; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+}
+
+.toper p {
+    position: fixed; /* Фиксированное положение */
+    right: 10px;
+    top: 0;
+}
+
+.table_dark {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    width: 500px;
+    margin: auto;
+    text-align: left;
+    border: solid;
+    border-collapse: collapse;
+    background: #fffafa;
+}
+
+.table_dark th {
+    color: #000000;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+    text-align: center;
+    padding: 0px 7px;
+}
+
+.table_dark td {
+    color: #000000;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+    text-align: center;
+    padding: 0px 0px;
+}
+
+.table_dark tr:last-child td {
+    border-bottom: 1px solid #000000;
+}
+
+.table_dark td:last-child {
+    border-right: 1px solid #000000;
+}
+
+.table_dark tr:hover td {
+    text-decoration: underline;
+}
